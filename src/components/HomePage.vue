@@ -81,7 +81,7 @@
               <!-- Easy Mode -->
               <Button
                 variant="outline"
-                class="flex justify-between items-center py-4"
+                class="flex justify-between items-center py-7"
               >
                 <div class="flex items-center">
                   <svg
@@ -101,13 +101,13 @@
                   </svg>
                   Easy
                 </div>
-                <span class="text-sm opacity-70">4 colors, 10 attempts</span>
+                <span class="text-sm opacity-70">10 numbers, 10 attempts</span>
               </Button>
 
               <!-- Medium Mode -->
               <Button
                 variant="outline"
-                class="flex justify-between items-center py-4"
+                class="flex justify-between items-center py-7"
               >
                 <div class="flex items-center">
                   <svg
@@ -128,13 +128,13 @@
                   </svg>
                   Medium
                 </div>
-                <span class="text-sm opacity-70">6 colors, 8 attempts</span>
+                <span class="text-sm opacity-70">10 numbers, 8 attempts</span>
               </Button>
 
               <!-- Hard Mode -->
               <Button
                 variant="outline"
-                class="flex justify-between items-center py-4"
+                class="flex justify-between items-center py-7"
               >
                 <div class="flex items-center">
                   <svg
@@ -155,12 +155,12 @@
                   </svg>
                   Hard
                 </div>
-                <span class="text-sm opacity-70">8 colors, 6 attempts</span>
+                <span class="text-sm opacity-70">10 numbers, 6 attempts</span>
               </Button>
             </div>
             <DrawerFooter>
               <DrawerClose>
-                <Button variant="outline" class="w-[70%]"> Cancel </Button>
+                <Button class="w-[60%] my-3 rounded-lg py-5"> Cancel </Button>
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
