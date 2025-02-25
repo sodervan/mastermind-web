@@ -70,39 +70,137 @@
         <Drawer>
           <DrawerTrigger class="w-[80%]">
             <Button class="py-7 px-5 rounded-xl w-[80%] mt-7"
-              >START GAME</Button
-            >
+              >START GAME
+            </Button>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
-              <DrawerTitle> SELECT MODE </DrawerTitle>
+              <DrawerTitle> SELECT MODE</DrawerTitle>
             </DrawerHeader>
             <div class="flex flex-col gap-4 px-6">
               <!-- Easy Mode -->
-              <Button
-                variant="outline"
-                class="flex justify-between items-center py-7"
-              >
-                <div class="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="mr-3 text-green-500"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="8 14 12 16 16 12"></polyline>
-                  </svg>
-                  Easy
-                </div>
-                <span class="text-sm opacity-70">10 numbers, 10 attempts</span>
-              </Button>
+              <Dialog>
+                <DialogTrigger as-child>
+                  <DrawerClose class="w-full">
+                    <Button
+                      variant="outline"
+                      class="flex justify-between items-center py-7 w-full"
+                    >
+                      <div class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="mr-3 text-green-500"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <polyline points="8 14 12 16 16 12"></polyline>
+                        </svg>
+                        Easy
+                      </div>
+                      <span class="text-sm opacity-70"
+                        >10 numbers, 10 attempts</span
+                      >
+                    </Button>
+                  </DrawerClose>
+                </DialogTrigger>
+                <!--                DIALOGUE CONTENT-->
+                <DialogContent class="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle
+                      class="flex items-center justify-center gap-2 text-xl font-bold"
+                    >
+                      <Brain class="h-6 w-6 text-primary" />
+                      Select Game Mode
+                    </DialogTitle>
+                    <DialogDescription class="text-center">
+                      Choose how you want to play Mastermind
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div class="grid gap-4 py-4">
+                    <div class="grid grid-cols-1 gap-4">
+                      <Button
+                        variant="outline"
+                        class="flex items-center justify-start gap-3 h-16 px-4 hover:bg-primary/5 hover:border-primary transition-all group"
+                        @click="handleModeSelect('single')"
+                      >
+                        <div
+                          class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center group-active:scale-95 transition-transform"
+                        >
+                          <User
+                            class="h-5 w-5 text-primary group-hover:scale-110 transition-transform"
+                          />
+                        </div>
+                        <div
+                          class="text-left group-active:translate-x-1 transition-transform"
+                        >
+                          <h3 class="font-medium">Single Player</h3>
+                          <p class="text-sm text-muted-foreground">
+                            Play at your own pace
+                          </p>
+                        </div>
+                      </Button>
+
+                      <Button
+                        variant="outline"
+                        class="flex items-center justify-start gap-3 h-16 px-4 hover:bg-primary/5 hover:border-primary transition-all group"
+                        @click="handleModeSelect('computer')"
+                      >
+                        <div
+                          class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center group-active:scale-95 transition-transform"
+                        >
+                          <Monitor
+                            class="h-5 w-5 text-primary group-hover:scale-110 transition-transform"
+                          />
+                        </div>
+                        <div
+                          class="text-left group-active:translate-x-1 transition-transform"
+                        >
+                          <h3 class="font-medium">vs Computer</h3>
+                          <p class="text-sm text-muted-foreground">
+                            Challenge the AI opponent
+                          </p>
+                        </div>
+                      </Button>
+
+                      <Button
+                        variant="outline"
+                        class="flex items-center justify-start gap-3 h-16 px-4 hover:bg-primary/5 hover:border-primary transition-all group"
+                        @click="handleModeSelect('online')"
+                      >
+                        <div
+                          class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center group-active:scale-95 transition-transform"
+                        >
+                          <Users
+                            class="h-5 w-5 text-primary group-hover:scale-110 transition-transform"
+                          />
+                        </div>
+                        <div
+                          class="text-left group-active:translate-x-1 transition-transform"
+                        >
+                          <h3 class="font-medium">Online Multiplayer</h3>
+                          <p class="text-sm text-muted-foreground">
+                            Play against other players
+                          </p>
+                        </div>
+                      </Button>
+                    </div>
+                  </div>
+                  <DialogFooter>
+                    <DialogClose as-child class="w-full flex justify-center">
+                      <Button type="button" class="w-[70%] py-6">
+                        Close
+                      </Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
 
               <!-- Medium Mode -->
               <Button
@@ -160,7 +258,7 @@
             </div>
             <DrawerFooter>
               <DrawerClose>
-                <Button class="w-[60%] my-3 rounded-lg py-5"> Cancel </Button>
+                <Button class="w-[60%] my-3 rounded-lg py-5"> Cancel</Button>
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
@@ -172,14 +270,14 @@
             <Button
               variant="secondary"
               class="py-7 px-5 rounded-xl w-[80%] mt-0"
-              >SETTINGS</Button
-            >
+              >SETTINGS
+            </Button>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
-              <DrawerTitle> SELECT MODE </DrawerTitle>
+              <DrawerTitle> SELECT MODE</DrawerTitle>
             </DrawerHeader>
-            <DrawerFooter> </DrawerFooter>
+            <DrawerFooter></DrawerFooter>
           </DrawerContent>
         </Drawer>
       </div>
@@ -198,7 +296,7 @@
 
 <script setup>
 import { Button } from "@/components/ui/button";
-import { Brain, CircuitBoard } from "lucide-vue-next";
+import { Brain, User, Monitor, Users, CircuitBoard } from "lucide-vue-next";
 import {
   Drawer,
   DrawerClose,
@@ -209,4 +307,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Popover } from "@/components/ui/popover/index.js";
 </script>
