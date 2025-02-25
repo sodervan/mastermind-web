@@ -69,9 +69,7 @@
         </p>
         <Drawer>
           <DrawerTrigger class="w-[80%]">
-            <Button
-              variant="secondary"
-              class="py-7 px-5 rounded-xl w-[80%] mt-7"
+            <Button class="py-7 px-5 rounded-xl w-[80%] mt-7"
               >START GAME</Button
             >
           </DrawerTrigger>
@@ -79,6 +77,87 @@
             <DrawerHeader>
               <DrawerTitle> SELECT MODE </DrawerTitle>
             </DrawerHeader>
+            <div class="flex flex-col gap-4 px-6">
+              <!-- Easy Mode -->
+              <Button
+                variant="outline"
+                class="flex justify-between items-center py-4"
+              >
+                <div class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mr-3 text-green-500"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="8 14 12 16 16 12"></polyline>
+                  </svg>
+                  Easy
+                </div>
+                <span class="text-sm opacity-70">4 colors, 10 attempts</span>
+              </Button>
+
+              <!-- Medium Mode -->
+              <Button
+                variant="outline"
+                class="flex justify-between items-center py-4"
+              >
+                <div class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mr-3 text-blue-500"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  Medium
+                </div>
+                <span class="text-sm opacity-70">6 colors, 8 attempts</span>
+              </Button>
+
+              <!-- Hard Mode -->
+              <Button
+                variant="outline"
+                class="flex justify-between items-center py-4"
+              >
+                <div class="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mr-3 text-red-500"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  Hard
+                </div>
+                <span class="text-sm opacity-70">8 colors, 6 attempts</span>
+              </Button>
+            </div>
             <DrawerFooter>
               <DrawerClose>
                 <Button variant="outline" class="w-[70%]"> Cancel </Button>
@@ -90,7 +169,11 @@
         <!--        SETTINGS DRAWER-->
         <Drawer>
           <DrawerTrigger class="w-[80%]">
-            <Button class="py-7 px-5 rounded-xl w-[80%] mt-0">SETTINGS</Button>
+            <Button
+              variant="secondary"
+              class="py-7 px-5 rounded-xl w-[80%] mt-0"
+              >SETTINGS</Button
+            >
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
