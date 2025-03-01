@@ -93,6 +93,11 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-yourfont;
   }
+}
+
+/* Define a custom font family class */
+.font-yourfont {
+  font-family: 'Poppins', sans-serif;
 }

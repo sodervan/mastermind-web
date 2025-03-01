@@ -1,5 +1,4 @@
 <template>
-  <>
   <div class="relative h-screen w-full bg-black overflow-hidden">
     <!-- Animated Background -->
     <svg
@@ -46,19 +45,17 @@
     </svg>
 
     <!-- Header -->
-    <div class="absolute top-0 left-0 w-full px-6 py-8">
-      <div class="flex items-center justify-center space-x-4">
-        <Brain class="w-10 h-10 text-indigo-400" />
-        <h1 class="text-3xl font-bold text-white tracking-wider">MASTERMIND</h1>
-      </div>
-    </div>
+    <!--    <div class="absolute top-0 left-0 w-full px-6 py-8">-->
+    <!--      <div class="flex items-center justify-center space-x-4">-->
+    <!--        <Brain class="w-10 h-10 text-indigo-400" />-->
+    <!--        <h1 class="text-3xl font-bold text-white tracking-wider">MASTERMIND</h1>-->
+    <!--      </div>-->
+    <!--    </div>-->
 
     <!-- Main Content -->
-    <div
-      class="relative z-10 flex flex-col items-center justify-center h-full -mt-20"
-    >
+    <div class="relative z-10 flex flex-col items-center h-full py-10">
       <!-- Game Icon -->
-      <div class="mb-12">
+      <div class="flex-1">
         <CircuitBoard class="w-24 h-24 text-white opacity-80" />
       </div>
 
@@ -68,9 +65,16 @@
           Test your deductive reasoning in this classic code-breaking game
         </p>
         <Drawer>
-          <DrawerTrigger class="w-[80%]">
-            <Button class="py-7 px-5 rounded-xl w-[80%] mt-7"
-              >START GAME
+          <DrawerTrigger class="w-full flex justify-center">
+            <Button
+              class="relative py-10 pr-12 pl-16 rounded-full w-[90%] bg-gradient-to-r from-zinc-900 to-zinc-800 hover:from-zinc-800 hover:to-zinc-700 border border-zinc-800 group transition-all duration-300 shadow-lg text-white"
+            >
+              <div
+                class="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md"
+              >
+                <ChevronRight class="text-zinc-900 w-5 h-5" />
+              </div>
+              <span class="text-lg font-medium tracking-wide">START</span>
             </Button>
           </DrawerTrigger>
           <DrawerContent>
@@ -84,29 +88,23 @@
                   <DrawerClose class="w-full">
                     <Button
                       variant="outline"
-                      class="flex justify-between items-center py-7 w-full"
+                      class="flex justify-between items-center py-10 rounded-[25px] w-full"
                     >
-                      <div class="flex items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="mr-3 text-green-500"
+                      <div class="flex items-center gap-4">
+                        <div
+                          class="bg-green-400 p-5 rounded-[20px] flex items-center justify-center"
                         >
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <polyline points="8 14 12 16 16 12"></polyline>
-                        </svg>
-                        Easy
+                          <Rocket />
+                        </div>
+                        <div class="flex flex-col items-start">
+                          <p class="font-bold text-lg">EASY</p>
+                          <p class="text-gray-500">10 numbers, 10 attempts</p>
+                        </div>
                       </div>
-                      <span class="text-sm opacity-70"
-                        >10 numbers, 10 attempts</span
-                      >
+
+                      <div>
+                        <ChevronRight />
+                      </div>
                     </Button>
                   </DrawerClose>
                 </DialogTrigger>
@@ -205,60 +203,50 @@
               <!-- Medium Mode -->
               <Button
                 variant="outline"
-                class="flex justify-between items-center py-7"
+                class="flex justify-between items-center py-10 rounded-[25px] w-full"
               >
-                <div class="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="mr-3 text-blue-500"
+                <div class="flex items-center gap-4">
+                  <div
+                    class="bg-yellow-400 p-5 rounded-[20px] flex items-center justify-center"
                   >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                  </svg>
-                  Medium
+                    <Rocket />
+                  </div>
+                  <div class="flex flex-col items-start">
+                    <p class="font-bold text-lg">MEDIUM</p>
+                    <p class="text-gray-500">10 numbers, 8 attempts</p>
+                  </div>
                 </div>
-                <span class="text-sm opacity-70">10 numbers, 8 attempts</span>
+
+                <div>
+                  <ChevronRight />
+                </div>
               </Button>
 
               <!-- Hard Mode -->
               <Button
                 variant="outline"
-                class="flex justify-between items-center py-7"
+                class="flex justify-between items-center py-10 rounded-[25px] w-full"
               >
-                <div class="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="mr-3 text-red-500"
+                <div class="flex items-center gap-4">
+                  <div
+                    class="bg-red-400 p-5 rounded-[20px] flex items-center justify-center"
                   >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                  </svg>
-                  Hard
+                    <Rocket />
+                  </div>
+                  <div class="flex flex-col items-start">
+                    <p class="font-bold text-lg">HARD</p>
+                    <p class="text-gray-500">10 numbers, 6 attempts</p>
+                  </div>
                 </div>
-                <span class="text-sm opacity-70">10 numbers, 6 attempts</span>
+
+                <div>
+                  <ChevronRight />
+                </div>
               </Button>
             </div>
             <DrawerFooter>
               <DrawerClose>
-                <Button class="w-[60%] my-3 rounded-lg py-5"> Cancel</Button>
+                <!--                <Button class="w-[60%] my-3 rounded-lg py-5"> Cancel</Button>-->
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>
@@ -266,11 +254,16 @@
 
         <!--        SETTINGS DRAWER-->
         <Drawer>
-          <DrawerTrigger class="w-[80%]">
+          <DrawerTrigger class="w-full">
             <Button
-              variant="secondary"
-              class="py-7 px-5 rounded-xl w-[80%] mt-0"
-              >SETTINGS
+              class="relative py-10 pr-12 pl-16 rounded-full w-[90%] bg-gradient-to-r from-zinc-900 to-zinc-800 hover:from-zinc-800 hover:to-zinc-700 border border-zinc-800 group transition-all duration-300 shadow-lg text-white"
+            >
+              <div
+                class="absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md"
+              >
+                <Bolt class="text-zinc-900 w-5 h-5" />
+              </div>
+              <span class="text-lg font-medium tracking-wide">SETTINGS</span>
             </Button>
           </DrawerTrigger>
           <DrawerContent>
@@ -296,7 +289,17 @@
 
 <script setup>
 import { Button } from "@/components/ui/button";
-import { Brain, User, Monitor, Users, CircuitBoard } from "lucide-vue-next";
+import {
+  Brain,
+  User,
+  Monitor,
+  Users,
+  CircuitBoard,
+  Rocket,
+  ChevronRight,
+  ChevronsRight,
+  Bolt,
+} from "lucide-vue-next";
 import {
   Drawer,
   DrawerClose,
