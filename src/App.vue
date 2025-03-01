@@ -1,15 +1,12 @@
 <script setup>
-import {Button} from "@/components/ui/button/index.js";
+import { Button } from "@/components/ui/button/index.js";
 import HomePage from "@/components/HomePage.vue";
 </script>
 
 <template>
   <div>
-    <HomePage/>
+    <RouterView />
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
